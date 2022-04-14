@@ -44,7 +44,7 @@ class Brain:
         self.model.fit(x, y, batch_size=64, nb_epoch=epoch, verbose=verbose)
 
     def predict(self, s):
-        return self.model.predict(s)
+        return self.model.predict(s) #s is the state vector of the RL model.
 
     def predictOne(self, s):
         return self.predict(s.reshape(1, self.stateCnt)).flatten()
