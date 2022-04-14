@@ -51,7 +51,7 @@ class Brain:
 
 #-------------------- MEMORY --------------------------
 class Memory:   # stored as ( s, a, r, s_ )
-    samples = []
+    samples = [] # create samples for replay memory.
 
     def __init__(self, capacity):
         self.capacity = capacity
@@ -60,11 +60,11 @@ class Memory:   # stored as ( s, a, r, s_ )
         self.samples.append(sample)        
 
         if len(self.samples) > self.capacity:
-            self.samples.pop(0)
+            self.samples.pop(0) # release the first data observation when running out of memory.
 
     def sample(self, n):
         n = min(n, len(self.samples))
-        return random.sample(self.samples, n)
+        return random.sample(self.samples, n) # randomly sample n observations from samples.
 
 #-------------------- AGENT ---------------------------
 MEMORY_CAPACITY = 100000
