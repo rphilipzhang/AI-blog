@@ -23,8 +23,8 @@ from keras.optimizers import *
 
 class Brain:
     def __init__(self, stateCnt, actionCnt):
-        self.stateCnt = stateCnt # number of parameters for the value network.
-        self.actionCnt = actionCnt # number of 
+        self.stateCnt = stateCnt # number of states.
+        self.actionCnt = actionCnt # number of actions.
 
         self.model = self._createModel()
         # self.model.load_weights("cartpole-basic.h5")
