@@ -47,7 +47,7 @@ class Brain:
         return self.model.predict(s) #s is the state vector of the RL model.
 
     def predictOne(self, s):
-        return self.predict(s.reshape(1, self.stateCnt)).flatten()
+        return self.predict(s.reshape(1, self.stateCnt)).flatten() # predict using a one-dimensional state vector
 
 #-------------------- MEMORY --------------------------
 class Memory:   # stored as ( s, a, r, s_ )
