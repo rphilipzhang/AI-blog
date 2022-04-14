@@ -59,9 +59,9 @@ class Brain:
 
     def predict(self, s, target=False):
         if target:
-            return self.model_.predict(s)
+            return self.model_.predict(s) # model_ is the target model
         else:
-            return self.model.predict(s)
+            return self.model.predict(s) # model is to optimize the action
 
     def predictOne(self, s, target=False):
         return self.predict(s.reshape(1, self.stateCnt), target=target).flatten()
